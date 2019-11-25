@@ -1,0 +1,44 @@
+﻿<Window x:Class="ProfileWin.WindowProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProfileWin"
+        mc:Ignorable="d"
+        Title="WindowProfile" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="113*"/>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="133*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="249*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="downloadImage" Click="downloadImageClick" HorizontalAlignment="Left" Margin="138,57,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="52" Grid.Column="1">
+            <Image Source="Images/upload_hw3.jpg" Height="29" Width="42"/>
+            <Button.Template>
+                <ControlTemplate  TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{x:Null}"></Ellipse>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></Label>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image x:Name="img" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="31,37,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,113,0,68" Grid.RowSpan="2">
+            <TextBox x:Name="textBoxLoginEdit" TextWrapping="Wrap" Width="146" Height="40" Margin="0, 20,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,72,0,1">
+            <TextBox x:Name="textBoxPasswordEdit" TextWrapping="Wrap" Width="146" Height="40" Margin="0,20,0,0"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="40,29,0,0" Grid.Row="2" Text="Логин: " TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="43"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,95,0,0" Grid.Row="2" Text="Пароль: " TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="48"/>
+        <Button Content="Сохранить изменения" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Height="34" Width="180" BorderBrush="Aqua" Background="Blue" Foreground="White" FontWeight="Bold" FontSize="15" Click="saveChangesButtonClick" Grid.Column="1" Margin="0,10,0,0"/>
+    </Grid>
+</Window>
